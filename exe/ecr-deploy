@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+
+require "ecr_deploy"
+require "ecr_deploy/optparse"
+require "ecr_deploy/cli"
+
+options = EcrDeploy::Optparse.parse(ARGV)
+EcrDeploy::CLI.run!(options)

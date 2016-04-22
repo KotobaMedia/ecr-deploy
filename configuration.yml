@@ -1,0 +1,23 @@
+---
+base_config:
+  # The S3 bucket that contains the task definition templates and environment
+  # files.
+  template_bucket: km-t01-config
+  # The prefix for template object file names. Used for disambiguation if you
+  # deploy multiple apps from the same bucket.
+  template_bucket_prefix: ecr-deploy-
+
+  # The name of the ECS cluster
+  cluster: default
+
+production:
+  # Services that will be updated
+  services:
+    - web
+
+  # Tasks that will be run as part of the deploy process (good for automatic
+  # migrations, etc)
+  run_tasks: []
+
+  # Tasks that will only be registered, not run. Good for on-demand workers.
+  register_tasks: []
