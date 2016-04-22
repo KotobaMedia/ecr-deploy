@@ -13,6 +13,13 @@ Simple script to help with AWS ECR deploys.
     $ ecr-deploy path_to_configuration.yml $ENVIRONMENT_NAME $IMAGE_TAG
     ```
 
+If you need to pass authentication or other options to the AWS client, you can use
+environment variables.
+
+```
+$ env AWS_REGION=ap-northeast-1 AWS_PROFILE=ecr-creds ecr-deploy config.yml prod tag
+```
+
 ## About
 
 `ecr-deploy` makes a few assumptions about your ECR setup:
